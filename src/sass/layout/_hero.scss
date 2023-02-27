@@ -1,12 +1,13 @@
 .hero {
   position: fixed;
   width: 100%;
+  top: 15%;
 }
 
 .hero__container {
   position: relative;
   @include flex(null, space-between);
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .links {
