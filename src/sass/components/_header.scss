@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.container {
+  @extend %container;
+}
+
+// Parallax images
+
+.parallax__item {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 120vw;
+  height: 120vh;
+  z-index: -1;
+
+  background-image: linear-gradient(
+    324.26deg,
+    rgba(11, 29, 38, 0.1) 14.52%,
+    rgba(11, 29, 38, 0.5) 105.7%
+  );
+}
+
+.parallax__clouds,
+.parallax__mountains,
+.parallax__man {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  left: 0;
+}
+
+.parallax__clouds {
+  top: -35%;
+  background-image: url('../images/bg/Clouds-min.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/bg/Clouds@2x-min.png');
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    background-image: url('../images/bg/Clouds@3x-min.png');
+  }
+}
+
+.parallax__mountains {
+  top: 12%;
+  background-image: url('../images/bg/Mountains-min.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/bg/Mountains@2x-min.png');
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    background-image: url('../images/bg/Mountains@3x-min.png');
+  }
+}
+
+.parallax__man {
+  top: 45%;
+  background-image: url('../images/bg/Man-min.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/bg/Man@2x-min.png');
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    background-image: url('../images/bg/Man@3x-min.png');
+  }
+
+  @media (max-aspect-ratio: 3/2) {
+    background-position: 20% top;
+  }
+}
+
+// End of parallax images
+
+.header__container {
+  @include flex(null, space-between);
+  padding-top: 3%;
+}
+
+.logo {
+  display: inline-block;
+  @include flex(null);
+
+  &__svg {
+    width: 108px;
+    height: 24px;
+  }
+}
+
+.nav {
+  &__link {
+    display: inline-block;
+    @include font-size(18px, 22px);
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+}
+
+.header__btn {
+  @include flex(8px);
+  @include font-size(17px, 21px);
+
+  &::before {
+    @include pseudo(24px, 24px);
+    background-image: url('../images/account.svg');
+    fill: currentColor;
+  }
+}

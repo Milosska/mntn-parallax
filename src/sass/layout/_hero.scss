@@ -1,0 +1,84 @@
+.hero {
+  position: fixed;
+  width: 100%;
+}
+
+.hero__container {
+  position: relative;
+  @include flex(null, space-between);
+  padding-top: 10%;
+}
+
+.links {
+  &__text {
+    margin-bottom: 24px;
+    writing-mode: vertical-rl;
+  }
+
+  &__list {
+    display: inline-block;
+    width: 24px;
+    @include flex(24px);
+    flex-direction: column;
+  }
+
+  &__item {
+    display: inline-flex;
+  }
+
+  &__link {
+    display: inline-flex;
+  }
+
+  &__svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.hero__thumb {
+  width: 50%;
+}
+
+.hero__uppertitle {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 32px;
+
+  @extend %uppertitle;
+
+  &::before {
+    @extend %uppertitle-pseudo;
+    margin-right: 32px;
+  }
+}
+
+.hero__title {
+  margin-bottom: 32px;
+
+  font-family: 'Chronicle Display Semibold';
+  font-weight: 600;
+  @include font-size(32px, 40px);
+  text-transform: capitalize;
+
+  @include media(min, desktop) {
+    @include font-size(88px, 100px);
+  }
+}
+
+.hero__link {
+  display: inline-flex;
+  align-items: center;
+
+  &::after {
+    margin-left: 16px;
+    @include pseudo(16px, 24px);
+    background-image: url('../images/arrow-down.svg');
+  }
+}
+
+.slider {
+  &__item {
+    text-align: right;
+  }
+}

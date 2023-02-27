@@ -1,0 +1,56 @@
+/* ====================== line height calculation =======================*/
+@mixin font-size($size: 14px, $height: 22px) {
+  font-size: $size;
+  line-height: calc($height / $size);
+}
+
+/* ============================ for flex ===========================*/
+/* ------- adds gap and flex styles ------- */
+// значення null на місці змінної прибирає параметр (строку коду) з міксіну
+@mixin flex($gap, $x: center, $y: center) {
+  display: flex;
+  gap: $gap;
+  justify-content: $x;
+  align-items: $y;
+}
+
+/* ------- calculates flex-basis ------- */
+// ($n - el number in a row)
+@mixin flex-basis($n, $gap) {
+  flex-basis: calc((100% - ($gap * ($n - 1))) / $n);
+}
+
+/* ============================ pseudoelement mixin ======================*/
+@mixin pseudo($width, $height) {
+  content: '';
+  display: inline-block;
+  width: $width;
+  height: $height;
+}
+
+/* ===================== position mixin =======================*/
+// ($position - position type (relative/absolute/fixed)
+// $top-or-bottom - top or bottom choise
+// $y - top/bottom offset in px
+// $left-or-right - left or right choise
+// $x - right/left offset in px
+@mixin position($position: absolute, $top-or-bottom, $y: 0, $left-or-right, $x: 0) {
+  position: $position;
+  #{$top-or-bottom}: $y;
+  #{$left-or-right}: $x;
+}
+
+/* ============================ mediarules mixin ======================*/
+// $max-or-min - max/min indication
+// $device - device type (phone/tablet/desktop)
+@mixin media($max-or-min: min, $device) {
+  @if $max-or-min == max {
+    @media screen and (#{$max-or-min}-width: (map-get($breakpoints, '#{$device}') - 0.5px)) {
+      @content;
+    }
+  } @else {
+    @media screen and (#{$max-or-min}-width: map-get($breakpoints, '#{$device}')) {
+      @content;
+    }
+  }
+}

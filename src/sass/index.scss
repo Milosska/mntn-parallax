@@ -1,2 +1,8 @@
-@import './common';
-@import './example';
+@import './utils/vars';
+@import './utils/drops';
+@import './utils/placeholders';
+@import './utils/mixins';
+@import './components/header';
+@import './layout/hero';
+@import './layout/content';
+@import './components/footer';

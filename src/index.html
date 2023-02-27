@@ -3,12 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>MNTN Community</title>
+
+    <!-- Favicon start -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_package/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon_package/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon_package/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./images/favicon_package/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon end -->
+
+    <!-- Modern-nornalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <include src="./partials/components/header.html"></include>
+    <include src="./partials/layout/hero.html"></include>
+    <include src="./partials/layout/content.html"></include>
+    <include src="./partials/components/footer.html"></include>
+
+    <!-- Scroll up -->
+    <a href="#header" class="up">
+      <svg class="up-icon">
+        <use href="./images/arrow-down.svg"></use>
+      </svg>
+    </a>
   </body>
 </html>
