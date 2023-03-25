@@ -16,10 +16,32 @@
         <use href="./images/svg-sprite.svg#logo"></use>
       </svg>
     </a>
-    <nav class="header__nav nav">
-      <a href="#" class="nav__link">Equipment</a>
-      <a href="#" class="nav__link">About us</a>
-      <a href="#" class="nav__link">Blog</a>
+    <button type="button" class="mobile-menu__open-btn open-btn">
+      <svg class="open-btn__svg">
+        <use href="./images/svg-sprite.svg#menu"></use>
+      </svg>
+    </button>
+    <div class="header__desktop-thumb">
+      <nav class="header__nav nav">
+        <a href="./index.html" class="nav__link">Equipment</a>
+        <a href="./index.html" class="nav__link">About us</a>
+        <a href="./index.html" class="nav__link">Blog</a>
+      </nav>
+      <button type="button" class="header__btn">Account</button>
+    </div>
+  </div>
+
+  <!-- Mobile-menu -->
+  <div class="mobile-menu__container mobile-menu">
+    <button type="button" class="mobile-menu__close-btn close-btn">
+      <svg class="close-btn__svg">
+        <use href="./images/svg-sprite.svg#close"></use>
+      </svg>
+    </button>
+    <nav class="header__mobile-nav mobile-nav">
+      <a href="./index.html" class="mobile-nav__link">About us</a>
+      <a href="./index.html" class="mobile-nav__link">Blog</a>
+      <a href="./index.html" class="mobile-nav__link">Equipment</a>
     </nav>
     <button type="button" class="header__btn">Account</button>
   </div>

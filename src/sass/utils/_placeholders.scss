@@ -11,22 +11,36 @@
 
 /* =================== uppertitle decoration =================*/
 %uppertitle {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-left: 50px;
   font-family: 'Gilroy Extrabold';
   font-weight: 800;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.2;
   letter-spacing: 6px;
   text-transform: uppercase;
   color: map-get($color, 'accent');
+
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+    padding-left: 0;
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
 }
 
 %uppertitle-pseudo {
   content: '';
   display: inline-block;
   background-color: map-get($color, 'accent');
-  width: 72px;
+  width: 52px;
   height: 2px;
-  margin-right: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 72px;
+  }
 }
 
 /* =================== visually-hidden =================*/

@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-.container {
-  @extend %container;
-}
-
 // Parallax images
 
 .parallax__item {
@@ -100,8 +96,13 @@
 // End of parallax images
 
 .header__container {
-  @include flex(null, space-between);
+  @extend %container;
+  @include flex(null, space-between, center);
   padding-top: 3%;
+
+  @include media(min, desktop) {
+    @include flex(null, space-between);
+  }
 }
 
 .logo {
@@ -111,6 +112,32 @@
   &__svg {
     width: 108px;
     height: 24px;
+  }
+}
+
+.open-btn {
+  @include flex(null, center, center);
+  width: 50px;
+  height: 40px;
+
+  @include media(min, tablet) {
+    display: none;
+  }
+
+  &__svg {
+    display: block;
+    width: 40px;
+    height: 30px;
+    fill: currentColor;
+  }
+}
+
+.header__desktop-thumb {
+  display: none;
+
+  @include media(min, tablet) {
+    @include flex(null, space-between, center);
+    width: 60%;
   }
 }
 
@@ -133,5 +160,67 @@
     @include pseudo(24px, 24px);
     background-image: url('../images/account.svg');
     fill: currentColor;
+  }
+}
+
+// Mobile menu styles
+
+.mobile-menu {
+  display: none;
+
+  &.is-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px 10px 10px 20px;
+    background-color: map-get($color, 'main');
+    color: map-get($color, 'text');
+
+    @include media(min, phone) {
+      padding: 10px 20px 10px 40px;
+    }
+  }
+
+  & .header__btn {
+    @include font-size(26px, 32px);
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.close-btn {
+  @include flex(null, center, center);
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+
+  &__svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+  }
+}
+
+.mobile-nav {
+  margin-bottom: 15px;
+
+  &__link {
+    display: block;
+    @include font-size(26px, 32px);
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:hover,
+    &:focus {
+      color: map-get($color, 'accent');
+    }
   }
 }

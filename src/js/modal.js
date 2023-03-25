@@ -1,10 +1,14 @@
-const headerBtnEl = document.querySelector('.header__btn');
+const headerBtnEl = document.querySelectorAll('.header__btn');
 const modalBtnEl = document.querySelector('.modal__btn');
 const backdropEl = document.querySelector('.overlay');
 
-headerBtnEl.addEventListener('click', onClick);
+headerBtnEl.forEach(elem => {
+  elem.addEventListener('click', onClick);
+});
 modalBtnEl.addEventListener('click', onClick);
 backdropEl.addEventListener('click', onBgClick);
+
+// console.log(headerBtnEl);
 
 function onClick() {
   toggleBg();

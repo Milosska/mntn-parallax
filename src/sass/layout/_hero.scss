@@ -6,8 +6,13 @@
 
 .hero__container {
   position: relative;
-  @include flex(null, space-between);
-  padding-top: 5%;
+  @include flex(10%, flex-start);
+  padding: 5% 10px 0 10px;
+
+  @include media(min, tablet) {
+    @include flex(null, space-between);
+    padding: 5% 30px 0 30px;
+  }
 }
 
 .links {
@@ -38,7 +43,15 @@
 }
 
 .hero__thumb {
-  width: 50%;
+  width: 80%;
+
+  @include media(min, phone) {
+    width: 70%;
+  }
+
+  @include media(min, tablet) {
+    width: 50%;
+  }
 }
 
 .hero__uppertitle {
@@ -79,6 +92,10 @@
 }
 
 .slider {
+  display: none;
+  @include media(min, tablet) {
+    display: block;
+  }
   &__item {
     text-align: right;
   }

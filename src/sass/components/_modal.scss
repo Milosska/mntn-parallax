@@ -1,5 +1,6 @@
 .overlay {
   @include position(absolute, top, 0, left, 0);
+  z-index: 1000;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
@@ -12,9 +13,9 @@
 .modal {
   @include position(absolute, top, 50%, left, 50%);
   transform: translate(-50%, -50%);
-  width: 30vw;
-  max-height: 80vh;
-  padding: 30px 20px;
+  width: 90vw;
+  max-height: 90vh;
+  padding: 30px 10px;
   border-radius: 5px;
   overflow-y: auto;
   background-color: #fff;
@@ -32,6 +33,12 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: #000000;
+  }
+
+  @include media(min, desktop) {
+    width: 30vw;
+    max-height: 80vh;
+    padding: 30px 20px;
   }
 }
 
@@ -55,25 +62,42 @@
 }
 
 .form__title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  @include font-size(22px, 26px);
   text-align: center;
+
+  @include media(min, desktop) {
+    margin-bottom: 20px;
+    @include font-size(26px, 32px);
+  }
 }
 
-.form__svg {
+.form__img {
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+
+  @include media(min, desktop) {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .form__label {
   display: block;
-  width: 50%;
   margin: 0 auto;
+  text-align: center;
+
+  @include media(min, desktop) {
+    width: 80%;
+    // text-align: left;
+  }
 }
 
 .form__input {
   display: block;
+  margin: 0 auto;
 }
 
 .form__btn {

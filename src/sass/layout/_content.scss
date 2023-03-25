@@ -12,7 +12,7 @@
     position: absolute;
     z-index: 0;
     transform: translateY(-95%);
-    @include pseudo(100%, 200px);
+    @include pseudo(100%, 150px);
     background-image: linear-gradient(
         to top,
         #0b1d26,
@@ -21,31 +21,61 @@
       ),
       linear-gradient(to top, rgba(11, 29, 38, 0.8), rgba(11, 29, 38, 0));
     filter: blur(5px);
+
+    @include media(min, tablet) {
+      @include pseudo(100%, 200px);
+    }
   }
 
   &__items {
-    @include flex(10vw);
-
-    &--right {
-      flex-direction: row-reverse;
-    }
+    padding: 0 20px;
 
     &:not(:last-child) {
-      margin-bottom: 200px;
+      margin-bottom: 60px;
+    }
+
+    @include media(min, tablet) {
+      padding: 0 30px;
+      @include flex(5vw);
+
+      &--right {
+        flex-direction: row-reverse;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include media(min, desktop) {
+      @include flex(10vw);
+
+      &:not(:last-child) {
+        margin-bottom: 100px;
+      }
     }
   }
 
   &__thumb {
     position: relative;
-    width: 33vw;
+    width: 100%;
+
+    @include media(min, desktop) {
+      width: 33vw;
+    }
   }
 
   &__number {
     @include position(absolute, top, 0, left, 0);
     display: block;
-    @include font-size(200px, 200px);
+    @include font-size(100px, 100px);
     opacity: 0.1;
-    transform: translate(-50%, -45%);
+    transform: translate(-10%, -45%);
+
+    @include media(min, desktop) {
+      @include font-size(200px, 200px);
+      transform: translate(-50%, -45%);
+    }
   }
 
   &__uppertitle {
@@ -58,16 +88,26 @@
   }
 
   &__title {
-    margin-bottom: 27px;
+    margin-bottom: 20px;
 
     font-family: 'Chronicle Display Semibold';
     font-weight: 600;
-    @include font-size(64px, 77px);
+    @include font-size(38px, 46px);
+
+    @include media(min, desktop) {
+      margin-bottom: 27px;
+      @include font-size(64px, 77px);
+    }
   }
 
   &__text {
-    margin-bottom: 27px;
-    @include font-size(18px, 32px);
+    margin-bottom: 15px;
+    @include font-size(14px, 22px);
+
+    @include media(min, desktop) {
+      margin-bottom: 27px;
+      @include font-size(18px, 32px);
+    }
   }
 
   &__link {
@@ -83,7 +123,12 @@
   }
 
   &__img {
-    width: 29vw;
-    height: auto;
+    display: none;
+
+    @include media(min, tablet) {
+      display: block;
+      width: 29vw;
+      height: auto;
+    }
   }
 }
